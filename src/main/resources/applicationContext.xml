@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Beans Declaration -->
+	<bean id="User" class="com.otv.user.User"></bean>
+    <bean id="CacheService" class="com.otv.srv.CacheService"></bean>
+    <bean id="CacheUpdater" class="com.otv.exe.CacheUpdater">
+    	<property name="user" ref="User" />
+		<property name="cacheService" ref="CacheService" />
+    </bean>
+</beans>
